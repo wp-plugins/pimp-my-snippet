@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Pimp my Snippet
+Plugin Name: Pimp My Snippet
 Plugin URI: http://pehbehbeh.de/projekte/wp/pimp-my-snippet/
 Description: Simple and lightweight syntax highlighting for WordPress.
 Author: pehbehbeh

@@ -1,4 +1,4 @@
-=== Pimp my Snippet ===
+=== Pimp My Snippet ===
 Contributors: pehbehbeh
 Donate link: http://pehbehbeh.de/
 Tags: syntax, highlighting, simple, lightweight

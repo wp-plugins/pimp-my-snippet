@@ -1,4 +1,4 @@
-# Pimp my Snippet
+# Pimp My Snippet
 Simple and lightweight syntax highlighting for WordPress.
 
 * **uses CSS classes instead of inline styles**
