@@ -10,6 +10,9 @@ Author URI: http://pehbehbeh.de/
 
 class PimpMySnippet
 {
+    protected $geshi;
+    protected $geshi_css_loaded;
+    
     public function __construct()
     {
         add_action('plugins_loaded', array($this, 'init'));
@@ -19,13 +22,12 @@ class PimpMySnippet
     public function init()
     {
         require dirname(__FILE__) . '/geshi/geshi.php';
-        global $geshi;
         
         // init GeSHi
-        $geshi = new GeSHi();
-        $geshi->enable_classes();
-        $geshi->enable_keyword_links(false);
-        $geshi->set_header_type(GESHI_HEADER_PRE_TABLE);
+        $this->geshi = new GeSHi();
+        $this->geshi->enable_classes();
+        $this->geshi->enable_keyword_links(false);
+        $this->geshi->set_header_type(GESHI_HEADER_PRE_TABLE);
     }
     
     public function filter($input)
@@ -37,8 +39,6 @@ class PimpMySnippet
     
     public function highlight($args)
     {
-        global $geshi, $geshi_css_loaded;
-    
         // trim arguments
         array_walk($args, create_function('&$arg', '$arg = trim($arg);'));
     
@@ -50,18 +50,18 @@ class PimpMySnippet
     
         // GeSHi settings
         $line_numbers = ($line > 0) ? GESHI_NORMAL_LINE_NUMBERS : GESHI_NO_LINE_NUMBERS;
-        $geshi->enable_line_numbers($line_numbers);
-        $geshi->start_line_numbers_at($line);
-        $geshi->set_source($snippet);
-        $geshi->set_language($lang);
+        $this->geshi->enable_line_numbers($line_numbers);
+        $this->geshi->start_line_numbers_at($line);
+        $this->geshi->set_source($snippet);
+        $this->geshi->set_language($lang);
     
         // output
         $output = '<div class="pms">';
-        if (!$geshi_css_loaded[$lang]) {
-            $output .= '<style type="text/css">' . $geshi->get_stylesheet() . '</style>';
-            $geshi_css_loaded[$lang] = true;
+        if (!$this->geshi_css_loaded[$lang]) {
+            $output .= '<style type="text/css">' . $this->geshi->get_stylesheet() . '</style>';
+            $this->geshi_css_loaded[$lang] = true;
         }
-        $output .= $geshi->parse_code();
+        $output .= $this->geshi->parse_code();
         $output .= '</div>';
         return $output;
     }
