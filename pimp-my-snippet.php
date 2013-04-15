@@ -4,7 +4,7 @@ Plugin Name: Pimp my Snippet
 Plugin URI: http://pehbehbeh.de/projekte/wp/pimp-my-snippet/
 Description: Simple and lightweight syntax highlighting for WordPress.
 Author: pehbehbeh
-Version: 0.1
+Version: 1.0
 Author URI: http://pehbehbeh.de/
 */
 
