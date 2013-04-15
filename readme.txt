@@ -3,8 +3,9 @@ Contributors: pehbehbeh
 Donate link: http://pehbehbeh.de/
 Tags: syntax, highlighting, simple, lightweight
 Requires at least: 3.1.2
-Tested up to: 3.1.2
+Tested up to: 3.5.1
 Stable tag: trunk
+License: CC BY-NC-ND 3.0 DE
 
 Simple and lightweight syntax highlighting for WordPress.
 
@@ -44,11 +45,18 @@ There are no screenshots available.
 
 == Changelog ==
 
+= 1.0 =
+* updated GeSHi to 1.0.8.11
+* code refactoring
+
 = 0.1 =
 * release of the plugin
 
 
 == Upgrade Notice ==
+
+= 1.0 =
+This release contains the latest version of GeSHi. I also did some code refactoring.
 
 = 0.1 =
 This is the release of the plugin. You should install immediately. ;)
